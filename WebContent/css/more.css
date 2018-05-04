@@ -1,0 +1,88 @@
+.section-1 ul{
+	display: block;
+}
+.section-1 ul li{
+	padding: 10px;
+	border:1px solid #ccc;
+	border-radius: 2px;
+	list-style-type: none;
+	cursor: pointer;
+	transition: 0.35s all;
+	display: inline-block;
+}
+.section-1 ul li:hover{
+	box-shadow: 0 0 10px #ccc;
+}
+.section-1 .nav-section .nav{
+	margin: 5px 0;
+}
+.section-1 .nav-section .nav span{
+	font-weight: 700;
+}
+._n6{
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 17px ;
+	line-height: 24px ;
+	letter-spacing: 0.2px ;
+	padding-top: 0px ;
+	padding-bottom: 0px ;
+	color: #484848 ;
+	font-weight: 300 ;
+	margin: 10px 0;
+}
+.active { 
+	color: #fff;
+	background-color: #337ab7;
+}
+._suz{
+	padding: 8px 0;
+	color: #077df3;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC";
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: 0.2px;
+	white-space: nowrap;
+}
+._1o{
+	margin: 0px !important;
+	word-wrap: break-word !important;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 17px !important;
+	line-height: 22px !important;
+	letter-spacing: 0.2px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	color: #484848 !important;
+	font-weight: 700 !important;
+}
+.section-1 .sale-section a{
+	margin:14px 0;
+	padding: 10px;
+	text-decoration: none;
+}
+
+.section-1 .sale-section .sale-one .text-section ._jg{
+	margin: 10px 0px;
+	word-wrap: break-word;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC";
+	font-size: 15px;
+	line-height: 18px;
+	letter-spacing: 0.2px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	color: #484848;
+	font-weight: 300;
+	display: inline;
+}
+.section-1 .sale-section .sale-one .text-section .jt{
+	margin: 5px 0;
+}
+.section-1 .sale-section .sale-one .text-section .jt .time{
+	float: right;
+}
+
+.section-1 .sale-section .sale-one .img-section img{
+	border-radius: 5px;
+	width: 100%;
+}

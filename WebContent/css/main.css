@@ -1,0 +1,169 @@
+.middle .container{
+	/*padding: 0 !important;*/
+}
+.navbar-default {
+  background-color: #337ab7 !important;
+  border-color: #337ab7 !important;
+}
+.navbar{
+	box-shadow: 0 0 10px #ccc;
+	border-radius: 0 !important;
+	padding: 10px 0;
+}
+.navbar .navbar-nav li a{
+	color: #fff !important;
+}
+header .navbar-header a{
+	margin-top: 5px;
+	margin-right: 20px;
+	width: 30px;
+	height: 30px;
+	background: url(../img/logo.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    background: url(../img/menu.png);
+	background-size:cover; 
+	background-position: center center;
+	background-repeat: no-repeat;
+	padding: 10px;
+	width: 30px;
+	height: 30px;
+	transition: all 0.5s;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
+.navbar-default .navbar-toggle:hover{
+	background-color: #198de3;
+}
+.middle{
+	margin-top: 40px;
+}
+h3{
+	margin:0 !important;
+}
+h1{
+	font-weight: 300 !important;
+}
+.middle .card-group{
+	background: rgba(255, 255, 255, 0.5);
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 20px;
+	transition: 0.3s all;
+}
+.middle .card-group:hover{
+	box-shadow: 0 0 10px #ccc;
+}
+.middle .card-group p{
+	padding: 10px 0;
+	margin: 10px 0;
+	word-wrap: break-word ;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" ;
+	font-size: 20px ;
+	line-height: 24px ;
+	letter-spacing: 0.2px ;
+	color: #484848 ;
+	font-weight: 300 ;
+}
+.middle .ctgu{
+	background: url(../img/ctgu.png);
+	background-color: transparent;
+	background-size: 128px;
+	background-repeat: no-repeat;
+	background-position-x: calc(100% - 16px);
+	background-position-y: calc(100% - 16px);
+}
+.middle .cteu{
+	background: url(../img/cteu.png);
+	background-color: #fff;
+	background-size: 128px;
+	background-repeat: no-repeat;
+	background-position-x: calc(100% - 16px);
+	background-position-y: calc(100% - 16px);
+}
+.middle .htgp{
+	background: url(../img/htgp.png);
+	background-color: #fff;
+	background-size: 128px;
+	background-repeat: no-repeat;
+	background-position-x: calc(100% - 16px);
+	background-position-y: calc(100% - 16px);
+}
+.section-2 .card-group{
+	background: rgba(255, 255, 255, 0.5);
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 20px;
+	transition: 0.3s all;
+}
+.section-2 .card-group p{
+	padding: 10px 0;
+	margin: 10px 0;
+	word-wrap: break-word ;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" ;
+	font-size: 20px ;
+	line-height: 24px ;
+	letter-spacing: 0.2px ;
+	color: #484848 ;
+	font-weight: 300 ;
+}
+.section-2 .card-group:hover{
+	box-shadow: 0 0 10px #ccc;
+}
+.section-2 .habbit{
+	background: url(../img/1771.jpg);
+	background-color: #fff;
+	background-size: 128px;
+	background-repeat: no-repeat;
+	background-position-x: calc(100% - 16px);
+	background-position-y: calc(100% - 16px);
+}
+footer{
+	margin-top: 20px;
+}
+footer .contact{
+	padding: 20px 0;
+}
+.a-group ul{
+	padding: 0;
+}
+.a-group li{	transition: 0.4s all;
+	border-radius: 100px;
+	display: inline-block;
+}
+.a-group li a{
+	transition: 0.4s all;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 18px;
+	color: #000;
+}
+.a-group li a:focus,.a-group li a:hover{
+	text-decoration: none;
+	color: #fff;
+}
+.qq:hover{
+	background: #DD4B39;
+}
+.wb:hover{
+	background: #E6162D;
+}
+.wx:hover{
+	background: #149814;
+}
+.ww{
+	padding: 20px;
+	width: 50px;
+	height: 40px;
+	background-size: cover;
+	background-position: center;
+	background: url(../img/ww.png);
+}
