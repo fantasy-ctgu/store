@@ -19,6 +19,7 @@ public class Test {
 	@org.junit.Test
 	public void getPath(){
 		System.out.println(ImgSave.getRandomString());
+		System.out.println(this.getClass().getResource("/").getPath());
 	}
 	@org.junit.Test
 	public void addUser(){

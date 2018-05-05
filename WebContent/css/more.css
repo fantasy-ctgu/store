@@ -45,6 +45,10 @@
 	white-space: nowrap;
 }
 ._1o{
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 	margin: 0px !important;
 	word-wrap: break-word !important;
 	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
@@ -74,6 +78,12 @@
 	color: #484848;
 	font-weight: 300;
 	display: inline;
+}
+.section-1 .sale-section .sale-one .text-section p{
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .section-1 .sale-section .sale-one .text-section .jt{
 	margin: 5px 0;

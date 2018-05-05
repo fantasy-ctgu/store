@@ -63,7 +63,7 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 	@Override
 	public List<Commodity> findAll() {
 		List<Commodity> commodities = new ArrayList<Commodity>();
-		String sql = "select * from commodity";
+		String sql = "select * from commodity_info";
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -89,7 +89,7 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 	@Override
 	public int getAllContent() {
 		int count = 0;
-		String sql = "select count(id) as count from commodity;";
+		String sql = "select count(id) as count from commodity_info";
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -165,7 +165,26 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 
 	@Override
 	public Commodity findById(int id) {
-		return null;
+		Commodity commodity = new Commodity();
+		String sql = "select * from commodity_info where id = ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				commodity.setId(Integer.parseInt(rs.getString("id")));
+				commodity.setCommodity_content(rs.getString("commodity_content"));
+				commodity.setCommodity_name(rs.getString("commodity_name"));
+				commodity.setCommodity_type(Integer.parseInt(rs.getString("commodity_type")));
+				commodity.setUsername(rs.getString("username"));
+				commodity.setDatetime(rs.getTimestamp("datetime").toString());
+				commodity.setCommodity_money(rs.getString("commodity_money"));
+				commodity.setImg(rs.getString("img"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return commodity;
 	}
 
 }

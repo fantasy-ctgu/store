@@ -14,8 +14,8 @@ public class ImgSave {
 		str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	}
 
-	public static String SaveImg(FileItem fileItem) {
-		String path = getImgPath(fileItem);
+	public static String SaveImg(FileItem fileItem,String uri) {
+		String path = getImgPath(fileItem, uri);
 		File file = new File(path);
 		try {
 			fileItem.write(file);
@@ -23,14 +23,16 @@ public class ImgSave {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return path;
+		return path.substring(path.lastIndexOf("storeImg"));
 
 	}
 
-	public static String getImgPath(FileItem fileItem) {
+	public static String getImgPath(FileItem fileItem,String uri) {
 		String fileName = fileItem.getName();
 		String lastName = fileName.substring(fileName.lastIndexOf("."));
-		String newFileName = ImgSavePath + "/webapps/storeImg/" + new Date().getTime() + getRandomString() + lastName;
+		String newFileName =uri+"store/WebContent/storeImg/"+new Date().getTime() + getRandomString() + lastName;
+		
+		System.out.println(newFileName);
 		return newFileName;
 	}
 

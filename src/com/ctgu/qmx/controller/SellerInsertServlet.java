@@ -31,10 +31,10 @@ public class SellerInsertServlet extends HttpServlet{
 		if (new SellerService().sellerRegister(user)) {
 			HttpSession session = req.getSession();
 			session.setAttribute("seller", user);
-			resp.sendRedirect("");
+			resp.sendRedirect("index.jsp");
 		}else {
 			req.setAttribute("error", "用户名已存在");
-			req.getRequestDispatcher("").forward(req, resp);
+			req.getRequestDispatcher("register.html").forward(req, resp);
 		}
 		
 	}

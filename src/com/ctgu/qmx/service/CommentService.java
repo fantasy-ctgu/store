@@ -1,6 +1,5 @@
 package com.ctgu.qmx.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.ctgu.qmx.bean.Comment;
@@ -21,13 +20,7 @@ public class CommentService {
 	}
 
 	public List<Comment> getComment(int commodity_id) {
-		List<Comment> comments1 = commentDaoImpl.findAll();
-		List<Comment> comments2 = new ArrayList<Comment>();
-		for(int i = 0;i < comments1.size();i++){
-			if(comments1.get(i).getId() == commodity_id){
-				comments2.add(comments1.get(i));
-			}
-		}
-		return comments2;
+		List<Comment> comments1 = commentDaoImpl.findId(commodity_id);
+		return comments1;
 	}
 }

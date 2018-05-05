@@ -28,7 +28,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>UserInsertServlet</servlet-name>
-		<url-pattern>/UserInsertServlet</url-pattern>
+		<url-pattern>/UserInsert</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -37,7 +37,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>SellerInsertServlet</servlet-name>
-		<url-pattern>/SellerInsertServlet</url-pattern>
+		<url-pattern>/SellerInsert</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -47,6 +47,15 @@
 	<servlet-mapping>
 		<servlet-name>UserLogin</servlet-name>
 		<url-pattern>/UserLogin</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SellerLogin</servlet-name>
+		<servlet-class>com.ctgu.qmx.controller.SellerLogin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SellerLogin</servlet-name>
+		<url-pattern>/SellerLogin</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -67,4 +76,48 @@
 		<url-pattern>/CheckSellerName</url-pattern>
 	</servlet-mapping>
 	
+	<filter>
+		<filter-name>MoreJsp</filter-name>
+		<filter-class>com.ctgu.qmx.filter.MoreJsp</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>MoreJsp</filter-name>
+		<url-pattern>/more.jsp</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>CommodityInsert</servlet-name>
+		<servlet-class>com.ctgu.qmx.controller.CommodityInsertServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CommodityInsert</servlet-name>
+		<url-pattern>/CommodityInsert</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Upload</servlet-name>
+		<servlet-class>com.ctgu.qmx.controller.UploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Upload</servlet-name>
+		<url-pattern>/Upload</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Page</servlet-name>
+		<servlet-class>com.ctgu.qmx.controller.PageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Page</servlet-name>
+		<url-pattern>/Page</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CommentInsert</servlet-name>
+		<servlet-class>com.ctgu.qmx.controller.CommentInsertServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CommentInsert</servlet-name>
+		<url-pattern>/CommentInsert</url-pattern>
+	</servlet-mapping>
 </web-app>

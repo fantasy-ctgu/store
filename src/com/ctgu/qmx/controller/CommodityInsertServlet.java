@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.tomcat.util.http.fileupload.FileItem;
 import org.apache.tomcat.util.http.fileupload.FileUploadException;
@@ -16,6 +17,8 @@ import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletRequestContext;
 
 import com.ctgu.qmx.bean.Commodity;
+import com.ctgu.qmx.bean.User;
+import com.ctgu.qmx.service.CommodityService;
 import com.ctgu.qmx.utils.ImgSave;
 
 public class CommodityInsertServlet extends HttpServlet{
@@ -27,8 +30,12 @@ public class CommodityInsertServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String uri = req.getServletContext().getRealPath("/") ;
 		if(ServletFileUpload.isMultipartContent(req)){
+			CommodityService commodityService = new CommodityService();
 			Commodity commodity = new Commodity();
+			HttpSession session = req.getSession();
+			User user = (User) session.getAttribute("seller");
 			DiskFileItemFactory factory = new DiskFileItemFactory();
 			ServletFileUpload servletFileUpload = new ServletFileUpload(factory);
 			try {
@@ -41,8 +48,6 @@ public class CommodityInsertServlet extends HttpServlet{
 						String value = fileItem.getString("utf-8");
 						if(name.equals("commodity_name")){
 							commodity.setCommodity_name(value);
-						}else if (name.equals("username")) {
-							commodity.setUsername(value);
 						}else if (name.equals("commodity_type")) {
 							commodity.setCommodity_type(Integer.parseInt(value));
 						}else if (name.equals("commodity_content")) {
@@ -52,14 +57,16 @@ public class CommodityInsertServlet extends HttpServlet{
 						}
 					}
 					else {
-						String path = ImgSave.SaveImg(fileItem);
+						String path = ImgSave.SaveImg(fileItem,uri.substring(0, uri.indexOf(".")));
 						commodity.setImg(path);
 					}
 				}
 			} catch (FileUploadException e) {
 				e.printStackTrace();
 			}
-			resp.sendRedirect("");
+			commodity.setUsername(user.getUsername());
+			commodityService.commodityInsert(commodity);
+			resp.sendRedirect("more.jsp");
 		}
 	}
 

@@ -18,7 +18,7 @@
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target="#example-navbar-collapse"></button>
-					<a class="navbar-brand" href="index.html">
+					<a class="navbar-brand" href="#">
 					</a>
 				</div>
 				<div class="collapse navbar-collapse bs-js-navbar-scrollspy" id="example-navbar-collapse">
@@ -26,7 +26,11 @@
 						<c:if test="${sessionScope.user!=null }">
 							<li style="line-height: 30px;color:#fff">欢迎您，${sessionScope.user.name}</li>
 						</c:if>
-						<c:if test="${sessionScope.user==null }">
+						<c:if test="${sessionScope.seller!=null}">
+							<li style="line-height: 50px;color:#fff">欢迎您，${sessionScope.seller.name }</li>
+							<li><a href="Upload" class="">发布</a></li>
+						</c:if>
+						<c:if test="${sessionScope.user==null && sessionScope.seller == null }">
 							<li><a href="login.html">登录</a></li>
 							<li><a href="register.html" class="">注册</a></li>
 						</c:if>
@@ -44,28 +48,28 @@
 				<div class="card-group">
 					<h3>三峡大学</h3>
 					<p>来三峡大学二手市场逛逛</p>
-					<button onclick="location.href='more.html'" class="btn btn-primary">进入</button>
+					<button onclick="location.href='more.jsp'" class="btn btn-primary">进入</button>
 				</div>				
 			</div>
 			<div class="col-lg-6 ctgu">
 				<div class="card-group">
 					<h3>三峡大学科技学院</h3>
 					<p>来科院找找喜欢的宝贝</p>
-					<button onclick="location.href='more.html'" class="btn btn-primary">进入</button>
+					<button onclick="location.href='#'" class="btn btn-primary">进入</button>
 				</div>				
 			</div>
 			<div class="col-lg-6 htgp">
 				<div class="card-group">
 					<h3>三峡职业技术学院</h3>
 					<p>三职欢迎您：）</p>
-					<button onclick="location.href='more.html'" class="btn btn-primary">进入</button>
+					<button onclick="location.href='#'" class="btn btn-primary">进入</button>
 				</div>				
 			</div>
 			<div class="col-lg-6 cteu">
 				<div class="card-group">
 					<h3>三峡电力职业学校</h3>
 					<p>三电的好东西</p>
-					<button onclick="location.href='more.html'" class="btn btn-primary">进入</button>
+					<button onclick="location.href='#'" class="btn btn-primary">进入</button>
 				</div>				
 			</div>
 		</div>
@@ -95,9 +99,9 @@
 					<p>都可以联系我们：</p>
 					<div class="a-group">
 						<ul>
-							<li class="wb"><a class="fa fa-weibo" href="" target="_blank"></a></li>		
-							<li class="qq"><a class="fa fa-qq" href="http://www.qq.com/" target="_blank"></a></li>
-							<li class="wx"><a class="fa fa-wechat" href="http://weixin.qq.com/" target="_blank"></a></li>
+							<li class="wb"><a class="fa fa-weibo" href="#" target="_blank"></a></li>		
+							<li class="qq"><a class="fa fa-qq" href="#" target="_blank"></a></li>
+							<li class="wx"><a class="fa fa-wechat" href="#" target="_blank"></a></li>
 						</ul>
 					</div>
 				</div>

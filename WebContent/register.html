@@ -7,44 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
 	<title>register</title>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript">
-		var flag1=false;
-		$(function(){
-			var $username = $("#inputEmail3");
-			$username.blur(function(){
-				var username = $username.val();
-				if(username == "" || username == null){
-					flag1 = false;
-					$("#checkName").html("输入不能为空").css("color","red");
-					return flag1;
-				}
-				$.ajax({
-					url:"CheckUserName",
-					type:"post",
-					datatype:"json",
-					data:{
-						"username":username
-					},
-					success:function(msg){
-						if(msg == 1){
-							flag1 = false;
-							$("#checkName").html("用户名被占用").css("color","red");
-						}else{
-							flag1 = true;
-							$("#checkName").html("").css("color","green");
-						}
-					}
-				});
-			});
-		});
-		function submitUser(){
-			console.log(flag1);
-			if(flag1){
-				$("#normalregister").submit();
-			}
-		}
-	</script>
 </head>
 <body>
 	<header>
@@ -76,59 +38,66 @@
 			</ul>
 			<hr>
 			<div id="myTabContent" class="tab-content">
-				<form action="UserInsertServlet" method="post" class="form-horizontal tab-pane fade in active" id="normalregister" role="form">
+				<form action="UserInsert" method="post" class="form-horizontal tab-pane fade in active" id="normalregister" role="form">
 					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+						<label class="col-sm-2 control-label">用户名</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputEmail3" placeholder="请输入您的用户名"  name="username"><span id="checkName"></span>
+							<input type="text" class="form-control" id="username1" placeholder="请输入您的用户名"  name="username" >
+							<span id="username1Span"></span>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+						<label class="col-sm-2 control-label">密码</label>
 						<div class="col-sm-10">
-							<input type="password" class="form-control" id="inputPassword3" placeholder="6-16位的英文字母、数字和特殊字符组成" name="password">
+							<input type="password" class="form-control" id="password1" placeholder="6-16位的英文字母、数字和特殊字符组成" name="password">
+							<span id="password1Span"></span>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-2 control-label">确认密码</label>
+						<label  class="col-sm-2 control-label">确认密码</label>
 						<div class="col-sm-10">
-							<input type="password" class="form-control" id="inputPassword3" placeholder="请再次输入您的密码"  name="password1">
+							<input type="password" class="form-control" id="password2" placeholder="请再次输入您的密码" name="password2">
+							<span id="password2Span"></span>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="name" class="col-sm-2 control-label">确认密码</label>
+						<label  class="col-sm-2 control-label">昵称</label>
 						<div class="col-sm-10">
-							<input type="password" class="form-control" id="name" placeholder="请再次输入您的密码"  name="name">
+							<input type="text" class="form-control" id="name1" placeholder="请输入您的昵称" name="name">
+							<span id="name1Span"></span>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-sm-2">性别</label>
 						<div class="col-sm-10">
 							<label class="radio-inline">
-								<input type="radio" name="sex" id="optionsRadios3" value="男">	
+								<input type="radio" id="radio1" value="男" checked name="sex">	
 								<span class="fa fa-mars" style="color: #1067DD;"></span>
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="sex" id="optionsRadios4"  value="女"> <span class="fa fa-venus" style="color: #D386B1;"></span>
+								<input type="radio" name="sex" id="radio2"  value="女"> <span class="fa fa-venus" style="color: #D386B1;"></span>
 							</label>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-2 control-label">年龄</label>
+						<label for="" class="col-sm-2 control-label">年龄</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputPassword3" placeholder="请输入您的年龄"  name="age">
+							<input type="text" class="form-control" id="age1" placeholder="请输入您的年龄"  name="age" >
+							<span id="age1Span"></span>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-2 control-label">电话</label>
+						<label for="" class="col-sm-2 control-label">电话</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputPassword3" placeholder="请输入您的电话"  name="phone">
+							<input type="text" class="form-control" id="phone1" placeholder="请输入您的电话" name="phone">
+							<span id="phone1Span"></span>
 						</div>
 					</div>
 					<div class="form-group">
 						<label  class="col-sm-2 control-label">地址</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="" placeholder="请输入您的学院"  name="address">
+							<input type="text" class="form-control" id="address1" placeholder="请输入您的学院"  name="address">
+							<span id="address1Span"></span>
 						</div>
 					</div>
 					<div class="a-group">
@@ -141,62 +110,71 @@
 						</div>
 					</div>
 				</form>
-				
-				
-				
-				<form class="form-horizontal tab-pane fade in" id="saleregister" role="form">
+
+
+				<form action="SellerInsert" method="post" class="form-horizontal tab-pane fade in" id="saleregister" role="form">
 					<div class="form-group">
-						<label for="inputEmail4" class="col-sm-2 control-label">用户名</label>
+						<label for="" class="col-sm-2 control-label">用户名</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputEmail4" placeholder="请输入您的用户名"  name="">
+							<input type="text" class="form-control" id="username2" placeholder="请输入您的用户名"  name="username">
+							<span id="username2Span"></span>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+						<label for="" class="col-sm-2 control-label">密码</label>
 						<div class="col-sm-10">
-							<input type="password" class="form-control" id="inputPassword3" placeholder="6-16位的英文字母、数字和特殊字符组成" name="">
+							<input type="password" class="form-control" id="password3" placeholder="6-16位的英文字母、数字和特殊字符组成" name="password">
+							<span id="password3Span"></span>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-2 control-label">确认密码</label>
+						<label for="" class="col-sm-2 control-label">确认密码</label>
 						<div class="col-sm-10">
-							<input type="password" class="form-control" id="inputPassword3" placeholder="请再次输入您的密码"  name="">
+							<input type="password" class="form-control" id="password4" placeholder="请再次输入您的密码"  name="password4">
+							<span id="password4Span"></span>
+
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="name" class="col-sm-2 control-label">确认密码</label>
+						<label  class="col-sm-2 control-label">昵称</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="name" placeholder="请再次输入您的昵称"  name="name">
+							<input type="text" class="form-control" id="name2" placeholder="请输入您的昵称" name="name">
+							<span id="name2Span"></span>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-sm-2">性别</label>
 						<div class="col-sm-10">
 							<label class="radio-inline">
-								<input type="radio" name="optionsRadiosinline" id="" value="option1">	
+								<input type="radio" name="sex" id="radio3" value="男" checked>	
 								<span class="fa fa-mars" style="color: #1067DD;"></span>
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="optionsRadiosinline" id=""  value="option2"> <span class="fa fa-venus" style="color: #D386B1;"></span>
+								<input type="radio" name="sex" id="radio4"  value="女"> <span class="fa fa-venus" style="color: #D386B1;"></span>
 							</label>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-sm-2 control-label">年龄</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="" placeholder="请输入您的年龄"  name="">
+							<input type="text" class="form-control" id="age2" placeholder="请输入您的年龄"  name="age">
+							<span id="age2Span"></span>
+
 						</div>
 					</div>
 					<div class="form-group">
 						<label  class="col-sm-2 control-label">电话</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="" placeholder="请输入您的电话"  name="">
+							<input type="text" class="form-control" id="phone2" placeholder="请输入您的电话"  name="phone">
+							<span id="phone2Span"></span>
+
 						</div>
 					</div>
 					<div class="form-group">
 						<label  class="col-sm-2 control-label">地址</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="" placeholder="请输入您的学院"  name="">
+							<input type="text" class="form-control" id="address2" placeholder="请输入您的学院"  name="address">
+							<span id="address2Span"></span>
 						</div>
 					</div>
 					<div class="a-group">
@@ -205,7 +183,7 @@
 					<hr>
 					<div class="form-group">
 						<div class="col-sm-offset-4 col-sm-4">
-							<button type="submit" class="btn btn-default btn-block">提交</button>
+							<button type="button" class="btn btn-default btn-block" onclick="submitSeller()">提交</button>
 						</div>
 					</div>
 				</form>
@@ -213,6 +191,9 @@
 		</div>
 	</section>
 </body>
-<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/register.js"></script>
+	<script type="text/javascript" src="js/register1.js"></script>
+
 </html>

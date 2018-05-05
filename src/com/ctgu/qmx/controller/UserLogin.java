@@ -26,6 +26,9 @@ public class UserLogin extends HttpServlet{
 		if(null != user && password.equals(user.getPassword())){
 			HttpSession session = req.getSession();
 			session.setAttribute("user", user);
+			if(session.getAttribute("seller") != null){
+				session.removeAttribute("seller");
+			}
 			resp.sendRedirect("index.jsp");
 		}else {
 			req.setAttribute("error", "用户不合法");

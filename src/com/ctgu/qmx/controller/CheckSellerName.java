@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ctgu.qmx.bean.User;
-import com.ctgu.qmx.service.UserService;
+import com.ctgu.qmx.service.SellerService;
 
 public class CheckSellerName extends HttpServlet{
 
@@ -20,7 +20,7 @@ public class CheckSellerName extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String username = req.getParameter("username");
-		User user = new UserService().findUser(username);
+		User user = new SellerService().findSeller(username);
 		PrintWriter out = resp.getWriter();
 		if(null != user){
 			out.println(1);

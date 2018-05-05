@@ -96,5 +96,26 @@ public class CommentDaoImpl implements IBaseDao<String, Comment> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public List<Comment> findId(int id){
+		List<Comment> comments = new ArrayList<Comment>();
+		String sql = "select * from commodity_comment";
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Comment comment = new Comment();
+				comment.setId(Integer.parseInt(rs.getString("id")));
+				comment.setUsername(rs.getString("username"));
+				comment.setDatetime(rs.getTimestamp("datetime").toString());
+				comment.setContent(rs.getString("content"));
+				comments.add(comment);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return comments;
+	}
 
 }

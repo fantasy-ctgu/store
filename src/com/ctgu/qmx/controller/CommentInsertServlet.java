@@ -25,26 +25,26 @@ public class CommentInsertServlet extends HttpServlet {
 		Comment comment = new Comment();
 		if (null != session.getAttribute("user")) {
 			User user = (User) session.getAttribute("user");
-			comment.setUsername(user.getUsername());
+			comment.setUsername(user.getName());
 			comment.setCommodity_id(Integer.parseInt(req.getParameter("commodity_id")));
 			comment.setContent(req.getParameter("content"));
 			if (new CommentService().commentInsert(comment)) {
-
+				resp.setHeader("refresh", "3");
 			} else {
 
 			}
 		} else if (null != session.getAttribute("seller")) {
 			User user = (User) session.getAttribute("seller");
-			comment.setUsername(user.getUsername());
+			comment.setUsername(user.getName());
 			comment.setCommodity_id(Integer.parseInt(req.getParameter("commodity_id")));
 			comment.setContent(req.getParameter("content"));
 			if (new CommentService().commentInsert(comment)) {
-
+				resp.setHeader("refresh", "3");
 			} else {
 
 			}
 		}else {
-			
+			resp.sendRedirect("login.html");
 		}
 	}
 

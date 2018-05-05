@@ -1,0 +1,75 @@
+.img-section{
+	margin-top: 20px;
+}
+.img-section img{
+	width: 80%;
+}
+.head {
+	margin-top: 50px;
+}
+.head .text-section h2{
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 32px;
+	color: #484848;
+	padding-bottom: 5px;
+	font-family: 'ITCAvantGardeStd';
+}
+.text-section h1{
+	text-align: center;
+}
+._suz{
+	padding: 8px 0;
+	color: #077df3;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC";
+	font-weight: 700;
+	font-size: 17px ;
+	line-height: 15px;
+	letter-spacing: 0.2px;
+	white-space: nowrap;
+}
+._l8{
+	padding: 5px 0;
+	margin: 0px ;
+	word-wrap: break-word ;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" ;
+	font-size: 17px ;
+	line-height: 24px ;
+	letter-spacing: 0.2px ;
+	color: #484848 ;
+	font-weight: 300 ;
+}
+._l6{
+  	margin: 0px !important;
+	word-wrap: break-word !important;
+	font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC" !important;
+	font-size: 15px !important;
+	line-height: 18px !important;
+	letter-spacing: 0.2px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	color: #484848 !important;
+	font-weight: 700 !important;
+	display: inline !important;
+}
+.comment-box { 
+	padding: 5px;
+	transition: 0.35s all;
+	padding: 10px 0; 
+	border-top: 1px solid #eee;
+}
+.comment-box:hover { 
+	background: rgb(247, 247, 247);
+}
+.comment-box .comment-time{
+	color: #999;
+}
+.text-box .comment { 
+	border: 1px solid #ccc;
+    display: block;  
+    padding: 5px; 
+    resize: none;
+}
+.form-horizontal button{
+	border-radius: 0 !important;
+}

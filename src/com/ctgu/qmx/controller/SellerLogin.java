@@ -25,7 +25,10 @@ public class SellerLogin extends HttpServlet{
 		if(null != user && password.equals(user.getPassword())){
 			HttpSession session = req.getSession();
 			session.setAttribute("seller", user);
-			resp.sendRedirect("");
+			if(session.getAttribute("user") != null){
+				session.removeAttribute("user");
+			}
+			resp.sendRedirect("index.jsp");
 		}else {
 			req.setAttribute("error", "用户不合法");
 			req.getRequestDispatcher("login.jsp").forward(req, resp);
