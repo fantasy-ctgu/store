@@ -23,16 +23,15 @@ public class ImgSave {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return path.substring(path.lastIndexOf("storeImg"));
+		return "http://"+GetIp.getV4IP() +"/"+ path.substring(path.lastIndexOf("storeImg"));
 
 	}
 
 	public static String getImgPath(FileItem fileItem,String uri) {
 		String fileName = fileItem.getName();
 		String lastName = fileName.substring(fileName.lastIndexOf("."));
-		String newFileName =uri+"store/WebContent/storeImg/"+new Date().getTime() + getRandomString() + lastName;
+		String newFileName =ImgSavePath + "/webapps/storeImg/" + new Date().getTime() + getRandomString() + lastName;
 		
-		System.out.println(newFileName);
 		return newFileName;
 	}
 

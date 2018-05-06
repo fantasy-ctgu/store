@@ -29,7 +29,7 @@ public class CommentInsertServlet extends HttpServlet {
 			comment.setCommodity_id(Integer.parseInt(req.getParameter("commodity_id")));
 			comment.setContent(req.getParameter("content"));
 			if (new CommentService().commentInsert(comment)) {
-				resp.setHeader("refresh", "3");
+				resp.sendRedirect("Page?id="+req.getParameter("commodity_id"));
 			} else {
 
 			}
@@ -39,7 +39,7 @@ public class CommentInsertServlet extends HttpServlet {
 			comment.setCommodity_id(Integer.parseInt(req.getParameter("commodity_id")));
 			comment.setContent(req.getParameter("content"));
 			if (new CommentService().commentInsert(comment)) {
-				resp.setHeader("refresh", "3");
+				resp.sendRedirect("Page?id="+req.getParameter("commodity_id"));
 			} else {
 
 			}

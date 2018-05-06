@@ -31,7 +31,7 @@ public class SellerLogin extends HttpServlet{
 			resp.sendRedirect("index.jsp");
 		}else {
 			req.setAttribute("error", "用户不合法");
-			req.getRequestDispatcher("login.jsp").forward(req, resp);
+			req.getRequestDispatcher("login.html").forward(req, resp);
 		}
 	}
 

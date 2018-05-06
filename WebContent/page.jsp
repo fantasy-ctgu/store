@@ -69,7 +69,7 @@
                        	 	</div>
 						</c:forEach >
                         <div class="comment-content">
-                            <p class="comment-text"><span class="user">我：</span>写的太好了。</p>
+                            <p class="comment-text"><span class="user">fantasy说：</span>商品很好。</p>
                             <p class="comment-time">
                                 2014-02-19 14:36
                             </p>

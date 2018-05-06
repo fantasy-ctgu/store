@@ -99,9 +99,10 @@ public class CommentDaoImpl implements IBaseDao<String, Comment> {
 	
 	public List<Comment> findId(int id){
 		List<Comment> comments = new ArrayList<Comment>();
-		String sql = "select * from commodity_comment";
+		String sql = "select * from commodity_comment where commodity_id = ?";
 		try {
 			ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				Comment comment = new Comment();

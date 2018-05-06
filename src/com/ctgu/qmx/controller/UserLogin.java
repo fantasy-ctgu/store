@@ -22,7 +22,6 @@ public class UserLogin extends HttpServlet{
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 		User user = new UserService().findUser(username);
-		System.out.println(user);
 		if(null != user && password.equals(user.getPassword())){
 			HttpSession session = req.getSession();
 			session.setAttribute("user", user);

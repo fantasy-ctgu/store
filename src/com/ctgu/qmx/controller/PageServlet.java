@@ -24,12 +24,16 @@ public class PageServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int id = Integer.parseInt(req.getParameter("id"));
+		if(req.getAttribute("comments") != null){
+			req.removeAttribute("comments");
+		}
 		CommodityService commodityService = new CommodityService();
 		SellerService sellerService = new SellerService();
 		CommentService commentService = new CommentService();
 		Commodity commodity = commodityService.findCommodity(id);
 		User user = sellerService.findSeller(commodity.getUsername());
 		List<Comment> comments = commentService.getComment(id);
+		System.out.println("commodity_id:"+id);
 		req.setAttribute("commodity", commodity);
 		req.setAttribute("comments", comments);
 		req.setAttribute("seller", user);

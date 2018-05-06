@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import com.ctgu.qmx.bean.User;
 import com.ctgu.qmx.daoimpl.UserDaoImpl;
 import com.ctgu.qmx.utils.DBUtils;
+import com.ctgu.qmx.utils.GetIp;
 import com.ctgu.qmx.utils.ImgSave;
 public class Test {
 	@org.junit.Test
@@ -14,7 +15,7 @@ public class Test {
 	
 	@org.junit.Test
 	public void insertUser(){
-		
+		System.out.println(GetIp.getV4IP());
 	}
 	@org.junit.Test
 	public void getPath(){
