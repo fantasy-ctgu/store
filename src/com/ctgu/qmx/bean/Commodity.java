@@ -8,6 +8,13 @@ public class Commodity {
 	private String datetime;
 	private String commodity_content;
 	private String commodity_money;
+	private int commodity_school;
+	public int getCommodity_school() {
+		return commodity_school;
+	}
+	public void setCommodity_school(int commodity_school) {
+		this.commodity_school = commodity_school;
+	}
 	private String img;
 	public int getId() {
 		return id;

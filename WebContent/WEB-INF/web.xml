@@ -74,15 +74,15 @@
 		<servlet-name>CheckSellerName</servlet-name>
 		<url-pattern>/CheckSellerName</url-pattern>
 	</servlet-mapping>
-
-	<filter>
-		<filter-name>MoreJsp</filter-name>
-		<filter-class>com.ctgu.qmx.filter.MoreJsp</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>MoreJsp</filter-name>
-		<url-pattern>/more.jsp</url-pattern>
-	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>More</servlet-name>
+		<servlet-class>com.ctgu.qmx.controller.MoreServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>More</servlet-name>
+		<url-pattern>/More</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>CommodityInsert</servlet-name>

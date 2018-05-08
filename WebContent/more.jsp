@@ -63,7 +63,7 @@
 	</div>
 	<section class="section-1 ">
 		<div class="container">
-			<h1>>三峡大学</h1>
+			<h1>>${requestScope.commoditySchool.explains }</h1>
 			<h4 class="_n6">
 				在这里找到您爱的东西
 			</h4>

@@ -101,6 +101,16 @@
 					</div>
 				</div>
 				<div class="form-group">
+					<label class="col-sm-2 control-label">学校:</label>
+					<div class="col-sm-10">
+						<select class="form-control" name="commodity_school">
+							<c:forEach items="${requestScope.commoditySchools }" var="school">
+								<option value="${school.commodity_school }">${school.explains }</option>
+							</c:forEach>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
 						<label  class="col-sm-2 control-label">图片:</label>
 						<div class="col-sm-4" style="margin-top: 5px;">
 							<input type="file" name="img" id="file" class="">

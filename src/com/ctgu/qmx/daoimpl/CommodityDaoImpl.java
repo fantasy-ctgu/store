@@ -28,7 +28,7 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 
 	@Override
 	public boolean doInsert(Commodity v) {
-		String sql = "insert into commodity_info(commodity_name,username,commodity_type,commodity_content,commodity_money,img) values(?,?,?,?,?,?)";
+		String sql = "insert into commodity_info(commodity_name,username,commodity_type,commodity_content,commodity_money,img,commodity_school) values(?,?,?,?,?,?,?)";
 		try {
 			this.ps = con.prepareStatement(sql);
 			ps.setString(1, v.getCommodity_name());
@@ -37,6 +37,7 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 			ps.setString(4, v.getCommodity_content());
 			ps.setString(5, v.getCommodity_money());
 			ps.setString(6, v.getImg());
+			ps.setInt(7, v.getCommodity_school());
 			if (ps.executeUpdate() > 0) {
 				return true;
 			}
@@ -76,6 +77,7 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 				commodity.setUsername(rs.getString("username"));
 				commodity.setDatetime(rs.getTimestamp("datetime").toString());
 				commodity.setCommodity_money(rs.getString("commodity_money"));
+				commodity.setCommodity_school(rs.getInt("commodity_school"));
 				commodity.setImg(rs.getString("img"));
 				commodities.add(commodity);
 			}
@@ -86,6 +88,31 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 		return commodities;
 	}
 
+	public List<Commodity> findBySchool(int school) {
+		List<Commodity> commodities = new ArrayList<Commodity>();
+		String sql = "select * from commodity_info where commodity_school = ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, school);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Commodity commodity = new Commodity();
+				commodity.setId(Integer.parseInt(rs.getString("id")));
+				commodity.setCommodity_content(rs.getString("commodity_content"));
+				commodity.setCommodity_name(rs.getString("commodity_name"));
+				commodity.setCommodity_type(Integer.parseInt(rs.getString("commodity_type")));
+				commodity.setUsername(rs.getString("username"));
+				commodity.setDatetime(rs.getTimestamp("datetime").toString());
+				commodity.setCommodity_money(rs.getString("commodity_money"));
+				commodity.setCommodity_school(rs.getInt("commodity_school"));
+				commodity.setImg(rs.getString("img"));
+				commodities.add(commodity);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return commodities;
+	}
 	@Override
 	public int getAllContent() {
 		int count = 0;
@@ -124,6 +151,7 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 					commodity.setUsername(rs.getString("username"));
 					commodity.setDatetime(rs.getTimestamp("datetime").toString());
 					commodity.setCommodity_money(rs.getString("commodity_money"));
+					commodity.setCommodity_school(rs.getInt("commodity_school"));
 					commodity.setImg(rs.getString("img"));
 					commodities.add(commodity);
 				}
@@ -148,6 +176,7 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 					commodity.setUsername(rs.getString("username"));
 					commodity.setDatetime(rs.getTimestamp("datetime").toString());
 					commodity.setCommodity_money(rs.getString("commodity_money"));
+					commodity.setCommodity_school(rs.getInt("commodity_school"));
 					commodity.setImg(rs.getString("img"));
 					commodities.add(commodity);
 				}
@@ -179,6 +208,7 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 				commodity.setUsername(rs.getString("username"));
 				commodity.setDatetime(rs.getTimestamp("datetime").toString());
 				commodity.setCommodity_money(rs.getString("commodity_money"));
+				commodity.setCommodity_school(rs.getInt("commodity_school"));
 				commodity.setImg(rs.getString("img"));
 			}
 		} catch (SQLException e) {

@@ -23,7 +23,7 @@ public class ImgSave {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "http://"+GetIp.getV4IP() +"/"+ path.substring(path.lastIndexOf("storeImg"));
+		return "http://"+GetIp.getV4IP() +":8080/"+ path.substring(path.lastIndexOf("storeImg"));
 
 	}
 

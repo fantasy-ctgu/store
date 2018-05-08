@@ -27,6 +27,9 @@ public class CommodityService {
 	public List<Commodity> getAllCommodity(){
 		return commodityDaoImpl.findAll();
 	}
+	public List<Commodity> getBySchool(int school){
+		return commodityDaoImpl.findBySchool(school);
+	}
 
 	public Page<Commodity> getPage(int currentPage, int pageSize, String keyWord) {
 		Page<Commodity> page = new Page<Commodity>();

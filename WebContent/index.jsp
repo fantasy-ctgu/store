@@ -86,28 +86,28 @@
 				<div class="card-group">
 					<h3>三峡大学</h3>
 					<p>来三峡大学二手市场逛逛</p>
-					<button onclick="location.href='more.jsp'" class="btn btn-primary">进入</button>
+					<button onclick="location.href='More?school=1'" class="btn btn-primary">进入</button>
 				</div>				
 			</div>
 			<div class="col-lg-6 ctgu">
 				<div class="card-group">
 					<h3>三峡大学科技学院</h3>
 					<p>来科院找找喜欢的宝贝</p>
-					<button onclick="location.href='#'" class="btn btn-primary">进入</button>
+					<button onclick="location.href='More?school=2'" class="btn btn-primary">进入</button>
 				</div>				
 			</div>
 			<div class="col-lg-6 htgp">
 				<div class="card-group">
 					<h3>三峡职业技术学院</h3>
 					<p>三职欢迎您：）</p>
-					<button onclick="location.href='#'" class="btn btn-primary">进入</button>
+					<button onclick="location.href='More?school=3'" class="btn btn-primary">进入</button>
 				</div>				
 			</div>
 			<div class="col-lg-6 cteu">
 				<div class="card-group">
 					<h3>三峡电力职业学校</h3>
 					<p>三电的好东西</p>
-					<button onclick="location.href='#'" class="btn btn-primary">进入</button>
+					<button onclick="location.href='More?school=4'" class="btn btn-primary">进入</button>
 				</div>				
 			</div>
 		</div>

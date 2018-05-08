@@ -54,6 +54,8 @@ public class CommodityInsertServlet extends HttpServlet{
 							commodity.setCommodity_content(value);
 						}else if (name.equals("commodity_money")) {
 							commodity.setCommodity_money(value);
+						}else if (name.equals("commodity_school")) {
+							commodity.setCommodity_school(Integer.parseInt(value));
 						}
 					}
 					else {
@@ -66,7 +68,7 @@ public class CommodityInsertServlet extends HttpServlet{
 			}
 			commodity.setUsername(user.getUsername());
 			commodityService.commodityInsert(commodity);
-			resp.sendRedirect("more.jsp");
+			resp.sendRedirect("index.jsp");
 		}
 	}
 
