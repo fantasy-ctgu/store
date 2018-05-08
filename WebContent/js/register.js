@@ -120,7 +120,7 @@ $(function(){
       $("#phone1Span").html("输入不能为空").css("color","red");
       return flag6;
     }else{
-      var pattern = /0?(13|14|15|18)[0-9]{9}/;
+      var pattern = /^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/;
       if(pattern.test(phone)!=true){
         flag6 = false;
           $("#phone1Span").html("请输入有效电话").css("color","red");

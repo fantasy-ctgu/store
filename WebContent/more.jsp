@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/more.css">
+	<link rel="shortcut icon" href="img/store.png" id="favicon-ico">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/jkresponsivegallery.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,17 +23,32 @@
 					data-target="#example-navbar-collapse"></button>
 					<a class="navbar-brand" href="index.jsp">
 					</a>
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					    <div class="modal-dialog">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					                <h4 class="modal-title" id="myModalLabel">联系我们</h4>
+					            </div>
+					            <div class="modal-body">
+					            	<p class="topLeftTwo">Q Q:497324235</p>
+					            	<p class="topLeftTwo">微信:wb197324238</p>
+					            	<p class="topLeftTwo">电话:17671326450</p>
+					            </div>
+					            <div class="modal-footer">
+					                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					            </div>
+					        </div><!-- /.modal-content -->
+					    </div><!-- /.modal -->
+					</div>
 				</div>
 				<div class="collapse navbar-collapse bs-js-navbar-scrollspy" id="example-navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<c:if test="${sessionScope.user!=null }">
-							<li style="line-height: 30px;color:#fff">欢迎您，${sessionScope.user.name}</li>
+							<li><a href="#" class="">欢迎您，${sessionScope.user.name}</a></li>
+							<li><a href="Upload" class="">发布宝贝</a></li>
 						</c:if>
-						<c:if test="${sessionScope.seller!=null}">
-							<li style="line-height: 50px;color:#fff">欢迎您，${sessionScope.seller.name }</li>
-							<li><a href="Upload" class="">发布</a></li>
-						</c:if>
-						<c:if test="${sessionScope.user==null && sessionScope.seller == null }">
+						<c:if test="${sessionScope.user==null}">
 							<li><a href="login.html">登录</a></li>
 							<li><a href="register.html" class="">注册</a></li>
 						</c:if>
@@ -41,6 +57,10 @@
 			</div>
 		</nav>
 	</header>
+	<div class="fixed">
+		<div class="fixedOne"><a href="#" class="" data-toggle="modal" data-target="#myModal">联系我们</a></div>
+		<div class="fixedTwo"><a href="Upload" class="">发布宝贝</a></div>
+	</div>
 	<section class="section-1 ">
 		<div class="container">
 			<h1>>三峡大学</h1>
@@ -74,7 +94,8 @@
 								</div>
 							</div>
 						</a>
-					</c:forEach >
+					</c:forEach > 
+					
 				</div>
 			</div>
 			<hr>

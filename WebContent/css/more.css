@@ -94,5 +94,6 @@
 
 .section-1 .sale-section .sale-one .img-section img{
 	border-radius: 5px;
+	max-height: 265px;
 	width: 100%;
 }
