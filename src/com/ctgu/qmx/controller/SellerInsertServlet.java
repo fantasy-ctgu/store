@@ -27,7 +27,6 @@ public class SellerInsertServlet extends HttpServlet{
 		user.setSex(req.getParameter("sex"));
 		user.setAge(Integer.parseInt(req.getParameter("age")));
 		user.setAddress(req.getParameter("address"));
-		user.setPhone(req.getParameter("phone"));
 		if (new SellerService().sellerRegister(user)) {
 			HttpSession session = req.getSession();
 			session.setAttribute("seller", user);

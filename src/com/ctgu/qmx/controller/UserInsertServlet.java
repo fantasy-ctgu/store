@@ -27,8 +27,6 @@ public class UserInsertServlet extends HttpServlet{
 		user.setSex(req.getParameter("sex"));
 		user.setAge(Integer.parseInt(req.getParameter("age")));
 		user.setAddress(req.getParameter("address"));
-		user.setPhone(req.getParameter("phone"));
-		System.out.println(user);
 		if (new UserService().userRegister(user)) {
 			HttpSession session = req.getSession();
 			session.setAttribute("user", user);

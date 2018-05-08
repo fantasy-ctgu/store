@@ -3,7 +3,6 @@ var flag2 = false;
 var flag3 = false;
 var flag4 = false;
 var flag5 = false;
-var flag6 = false;
 var flag7 = false;
 $(function(){
   var $username1 = $("#username1");
@@ -15,7 +14,6 @@ $(function(){
 
   var $age1 = $("#age1");
 
-  var $phone1 = $("#phone1");
 
   var $address1 = $("#address1");
   $username1.blur(function(){
@@ -25,9 +23,9 @@ $(function(){
       $("#username1Span").html("输入不能为空").css("color","red");
       return flag1;
     }else{
-      var reg = /^[0-9]{10}$/;
+      var reg = /^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/;
       if(reg.test(username) != true){
-        $("#username1Span").html("请输入10位数字").css("color","red");
+        $("#username1Span").html("请输入正确的手机号码").css("color","red");
         flag1 = false;
       }else{
         $.ajax({
@@ -113,23 +111,6 @@ $(function(){
       }
     }
   });
-  $phone1.blur(function(){
-    var phone = $phone1.val();
-    if(phone==""||phone==null){
-      flag6 = false;
-      $("#phone1Span").html("输入不能为空").css("color","red");
-      return flag6;
-    }else{
-      var pattern = /^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/;
-      if(pattern.test(phone)!=true){
-        flag6 = false;
-          $("#phone1Span").html("请输入有效电话").css("color","red");
-      }else{
-        $("#phone1Span").html("");
-        flag6 = true;
-      }
-    }
-  });
   $address1.blur(function(){
     var address = $address1.val();
     if(address==""||address==null){
@@ -150,7 +131,7 @@ $(function(){
 
 function submitUser(){
 
-    if(flag1 && flag2 && flag3&&flag4&&flag5&&flag6&&flag7){
+    if(flag1 && flag2 && flag3&&flag4&&flag5&&flag7){
       $("#normalregister").submit();
     }else{
       alert("请正确填写所有信息");

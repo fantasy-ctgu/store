@@ -13,7 +13,7 @@ import com.ctgu.qmx.bean.Commodity;
 import com.ctgu.qmx.bean.User;
 import com.ctgu.qmx.service.CommentService;
 import com.ctgu.qmx.service.CommodityService;
-import com.ctgu.qmx.service.SellerService;
+import com.ctgu.qmx.service.UserService;
 
 public class PageServlet extends HttpServlet{
 
@@ -28,15 +28,15 @@ public class PageServlet extends HttpServlet{
 			req.removeAttribute("comments");
 		}
 		CommodityService commodityService = new CommodityService();
-		SellerService sellerService = new SellerService();
+		UserService userService = new UserService();
 		CommentService commentService = new CommentService();
 		Commodity commodity = commodityService.findCommodity(id);
-		User user = sellerService.findSeller(commodity.getUsername());
+		User user = userService.findUser(commodity.getUsername());
 		List<Comment> comments = commentService.getComment(id);
 		System.out.println("commodity_id:"+id);
 		req.setAttribute("commodity", commodity);
 		req.setAttribute("comments", comments);
-		req.setAttribute("seller", user);
+		req.setAttribute("user", user);
 		req.getRequestDispatcher("page.jsp").forward(req, resp);
 	}
 

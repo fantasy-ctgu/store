@@ -33,17 +33,7 @@ public class CommentInsertServlet extends HttpServlet {
 			} else {
 
 			}
-		} else if (null != session.getAttribute("seller")) {
-			User user = (User) session.getAttribute("seller");
-			comment.setUsername(user.getName());
-			comment.setCommodity_id(Integer.parseInt(req.getParameter("commodity_id")));
-			comment.setContent(req.getParameter("content"));
-			if (new CommentService().commentInsert(comment)) {
-				resp.sendRedirect("Page?id="+req.getParameter("commodity_id"));
-			} else {
-
-			}
-		}else {
+		} else {
 			resp.sendRedirect("login.html");
 		}
 	}

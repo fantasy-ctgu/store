@@ -10,20 +10,9 @@ create table user_info(
 	sex char(4) default null check (sex='ÄÐ' or sex='Å®' or sex=null),
 	age int default null,
 	address varchar(50) not null,
-	phone varchar(15),
 	unique(username)
 )ENGINE=InnoDB auto_increment=1 default charset=utf8;
 
-create table seller_info(
-	id int auto_increment primary key,
-	username varchar(50) not null unique,
-	password varchar(50) not null,
-	name varchar(50) not null,
-	sex char(4) default null check(sex='ÄÐ' or sex='Å®' or sex=null),
-	age int default null,
-	address varchar(50) not null,
-	phone varchar(15)
-)ENGINE=InnoDB auto_increment=1 default charset=utf8;
 
 create table commodity_info(
 	id int auto_increment primary key,

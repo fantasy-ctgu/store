@@ -25,7 +25,7 @@ public class UserDaoImpl implements IBaseDao<String, User>{
 	}
 	@Override
 	public boolean doInsert(User v) {
-		String sql = "insert into user_info(username,password,name,sex,age,address,phone) values(?,?,?,?,?,?,?)";
+		String sql = "insert into user_info(username,password,name,sex,age,address) values(?,?,?,?,?,?)";
 		try {
 			this.ps = con.prepareStatement(sql);
 			ps.setString(1, v.getUsername());
@@ -34,7 +34,6 @@ public class UserDaoImpl implements IBaseDao<String, User>{
 			ps.setString(4, v.getSex());
 			ps.setInt(5, v.getAge());
 			ps.setString(6, v.getAddress());
-			ps.setString(7, v.getPhone());
 			if(ps.executeUpdate() > 0){
 				return true;
 			}
@@ -52,7 +51,7 @@ public class UserDaoImpl implements IBaseDao<String, User>{
 
 	@Override
 	public boolean doUpdate(User v) {
-		String sql = "update user set password = ?,name = ?,sex = ?,age = ?,address = ?,phone = ? WHERE username ="+v.getUsername();
+		String sql = "update user set password = ?,name = ?,sex = ?,age = ?,address = ? WHERE username = ?";
 		try {
 			this.ps = con.prepareStatement(sql);
 			ps.setString(1, v.getPassword());
@@ -60,7 +59,7 @@ public class UserDaoImpl implements IBaseDao<String, User>{
 			ps.setString(3, v.getSex());
 			ps.setInt(4, v.getAge());
 			ps.setString(5, v.getAddress());
-			ps.setString(6, v.getPhone());
+			ps.setString(6, v.getUsername());
 			if(ps.executeUpdate() > 0){
 				return true;
 			}
@@ -87,7 +86,6 @@ public class UserDaoImpl implements IBaseDao<String, User>{
 				user.setSex(rs.getString("sex"));
 				user.setAge(rs.getInt("age"));
 				user.setAddress(rs.getString("address"));
-				user.setPhone(rs.getString("phone"));
 			}
 			return user;
 		} catch (SQLException e) {

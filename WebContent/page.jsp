@@ -64,7 +64,7 @@
 			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-section">
 				<h2><div class="_suz">鞋 · ${requestScope.commodity.commodity_name }</div></h2>
 				
-				<div class="_l8">卖家：<span>${requestScope.seller.name }</span></div>
+				<div class="_l8">卖家：<span>${requestScope.user.name }</span></div>
 				<div class="_l8">价格 ：${requestScope.commodity.commodity_money }</div>
 				<div class="_l8">时间 ：${requestScope.commodity.datetime }</div>
 				<div class="_l8">简介 ：${requestScope.commodity.commodity_content }</div>

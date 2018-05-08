@@ -35,7 +35,7 @@ public class CommodityInsertServlet extends HttpServlet{
 			CommodityService commodityService = new CommodityService();
 			Commodity commodity = new Commodity();
 			HttpSession session = req.getSession();
-			User user = (User) session.getAttribute("seller");
+			User user = (User) session.getAttribute("user");
 			DiskFileItemFactory factory = new DiskFileItemFactory();
 			ServletFileUpload servletFileUpload = new ServletFileUpload(factory);
 			try {

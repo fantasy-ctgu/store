@@ -21,6 +21,10 @@ public class UploadServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		CommodityTypeService commodityTypeService = new CommodityTypeService();
 		List<CommodityType> commodityTypes = commodityTypeService.getAll();
+		if(req.getSession().getAttribute("user") == null){
+			resp.sendRedirect("login.html");
+			return ;
+		}
 		req.setAttribute("commodityTypes", commodityTypes);
 		req.getRequestDispatcher("upload.jsp").forward(req, resp);
 	}
