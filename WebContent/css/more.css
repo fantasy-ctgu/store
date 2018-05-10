@@ -61,7 +61,9 @@
 	font-weight: 700 !important;
 }
 .section-1 .sale-section a{
-	margin:14px 0;
+
+	margin:14px auto;
+	width: 260px;
 	padding: 10px;
 	text-decoration: none;
 }
@@ -91,9 +93,12 @@
 .section-1 .sale-section .sale-one .text-section .jt .time{
 	float: right;
 }
-
+.section-1 .sale-section .sale-one .img-section{
+	height: 260px;
+	width: 260px;
+}
 .section-1 .sale-section .sale-one .img-section img{
 	border-radius: 5px;
-	max-height: 265px;
+	height: 100%;
 	width: 100%;
 }

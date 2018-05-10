@@ -67,7 +67,7 @@
 	</div>
 	<section class="section-3">
 		<div class="container container-small">
-			<form action="CommodityInsert" method="post" enctype="multipart/form-data" class="form-horizontal tab-pane fade in active" id="oploadform" role="form">
+			<form action="CommodityInsert" method="post" enctype="multipart/form-data" class="form-horizontal tab-pane fade in active" id="uploadform" role="form">
 				<div class="form-group">
 						<label class="col-sm-2 control-label">标题:</label>
 						<div class="col-sm-10">
@@ -78,7 +78,7 @@
 				<div class="form-group">
 						<label class="col-sm-2 control-label">简介:</label>
 						<div class="col-sm-10">
-							<textarea form="oploadform" class="form-control" id="textarea" name="commodity_content"></textarea>
+							<textarea form="uploadform" class="form-control" id="textarea" name="commodity_content"></textarea>
 							<span id="textareaSpan"></span>
 						</div>
 				</div>
@@ -114,13 +114,12 @@
 						<label  class="col-sm-2 control-label">图片:</label>
 						<div class="col-sm-4" style="margin-top: 5px;">
 							<input type="file" name="img" id="file" class="">
-							<span style="line-height: 30px;color: red">图片宽高比例须是1:1</span>
 						</div>
 				</div>
 				<hr>
 				<div class="form-group">
 					<div class="col-sm-offset-4 col-sm-4">
-						<button type="submit" class="btn btn-primary btn-block">发 布</button>
+						<button type="button" onclick="uploadSubmit()" class="btn btn-primary btn-block">发 布</button>
 					</div>
 				</div>
 			</form>

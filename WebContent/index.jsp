@@ -89,24 +89,24 @@
 					<button onclick="location.href='More?school=1'" class="btn btn-primary">进入</button>
 				</div>				
 			</div>
-			<div class="col-lg-6 ctgu">
+			<div class="col-lg-6 ctgu2">
 				<div class="card-group">
-					<h3>三峡大学科技学院</h3>
-					<p>来科院找找喜欢的宝贝</p>
+					<h3>中南民族大学</h3>
+					<p>来民族大学找找喜欢的宝贝</p>
 					<button onclick="location.href='More?school=2'" class="btn btn-primary">进入</button>
 				</div>				
 			</div>
 			<div class="col-lg-6 htgp">
 				<div class="card-group">
-					<h3>三峡职业技术学院</h3>
-					<p>三职欢迎您：）</p>
+					<h3>华中科技大学</h3>
+					<p>华科欢迎您：）</p>
 					<button onclick="location.href='More?school=3'" class="btn btn-primary">进入</button>
 				</div>				
 			</div>
 			<div class="col-lg-6 cteu">
 				<div class="card-group">
-					<h3>三峡电力职业学校</h3>
-					<p>三电的好东西</p>
+					<h3>武汉大学</h3>
+					<p>武大的好东西</p>
 					<button onclick="location.href='More?school=4'" class="btn btn-primary">进入</button>
 				</div>				
 			</div>
@@ -121,7 +121,7 @@
 				<div class="card-group">
 					<h3>发布新玩意!</h3>
 					<p>让更多人看见更多喜欢的东西</p>
-					<button class="btn btn-primary">立刻发布</button>
+					<button onclick="location.href='Upload'" class="btn btn-primary">立刻发布</button>
 				</div>
 			</div>
 			<div class="col-lg-4 habbit">

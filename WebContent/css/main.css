@@ -111,8 +111,12 @@ h1{
 	background-position-x: calc(100% - 16px);
 	background-position-y: calc(100% - 16px);
 }
+.middle .ctgu2 {
+	background-position-x: calc(100% - 16px);
+	background-position-y: calc(100% - 16px);
+}
 .middle .cteu{
-	background: url(../img/cteu.png);
+	background: url(../img/whu.jpg);
 	background-color: #fff;
 	background-size: 128px;
 	background-repeat: no-repeat;
@@ -120,7 +124,7 @@ h1{
 	background-position-y: calc(100% - 16px);
 }
 .middle .htgp{
-	background: url(../img/htgp.png);
+	background: url(../img/hzu.jpg);
 	background-color: #fff;
 	background-size: 128px;
 	background-repeat: no-repeat;
