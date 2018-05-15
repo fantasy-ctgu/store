@@ -19,7 +19,6 @@ public class CommentDaoImpl implements IBaseDao<String, Comment> {
 		try {
 			this.con = DBUtils.getCon();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -37,13 +36,19 @@ public class CommentDaoImpl implements IBaseDao<String, Comment> {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+				ps.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return false;
 	}
 
 	@Override
 	public boolean doDelete(String k) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -69,6 +74,9 @@ public class CommentDaoImpl implements IBaseDao<String, Comment> {
 				comment.setDatetime(rs.getTimestamp("datetime").toString());
 				comments.add(comment);
 			}
+			con.close();
+			ps.close();
+			rs.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -77,7 +85,6 @@ public class CommentDaoImpl implements IBaseDao<String, Comment> {
 
 	@Override
 	public List<Comment> findAllPaging(String keyWord, int currentPage, int pageSize) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -112,6 +119,9 @@ public class CommentDaoImpl implements IBaseDao<String, Comment> {
 				comment.setContent(rs.getString("content"));
 				comments.add(comment);
 			}
+			con.close();
+			ps.close();
+			rs.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

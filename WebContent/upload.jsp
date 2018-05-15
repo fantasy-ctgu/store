@@ -32,7 +32,7 @@
 					            </div>
 					            <div class="modal-body">
 					            	<p class="topLeftTwo">Q Q:497324235</p>
-					            	<p class="topLeftTwo">微信:wb197324238</p>
+					            	<p class="topLeftTwo">微信:wb497324238</p>
 					            	<p class="topLeftTwo">电话:17671326450</p>
 					            </div>
 					            <div class="modal-footer">
@@ -61,10 +61,6 @@
     	<h1>发布新宝贝！</h1>
     	<hr>
     </div>
-    <div class="fixed">
-		<div class="fixedOne"><a href="#" class="" data-toggle="modal" data-target="#myModal">联系我们</a></div>
-		<div class="fixedTwo"><a href="Upload" class="">发布宝贝</a></div>
-	</div>
 	<section class="section-3">
 		<div class="container container-small">
 			<form action="CommodityInsert" method="post" enctype="multipart/form-data" class="form-horizontal tab-pane fade in active" id="uploadform" role="form">
@@ -113,7 +109,8 @@
 				<div class="form-group">
 						<label  class="col-sm-2 control-label">图片:</label>
 						<div class="col-sm-4" style="margin-top: 5px;">
-							<input type="file" name="img" id="file" class="">
+							<input type="file" name="img" id="file" class="file" style="position:relative;margin-left:10px;">
+							<button type="button" class="btn" onclick="checkFile()" style="position: relative;margin-top: -28px;">选择图片</button>
 						</div>
 				</div>
 				<hr>

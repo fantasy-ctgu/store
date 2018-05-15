@@ -4,6 +4,14 @@
     min-width: 200px;
     margin-top: 10px;
 }
+.file{
+	position:relative;
+	margin-left:10px;
+}
+.fileBtn{
+	position: relative;
+	margin-top: -20px;
+}
 .fileUploadContent .fileItem{
     border: solid thin #DDDDDD;
     width: 150px;

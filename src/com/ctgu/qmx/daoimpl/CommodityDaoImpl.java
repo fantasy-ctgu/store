@@ -21,7 +21,6 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 		try {
 			this.con = DBUtils.getCon();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -44,6 +43,14 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+				ps.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		return false;
@@ -81,6 +88,9 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 				commodity.setImg(rs.getString("img"));
 				commodities.add(commodity);
 			}
+			con.close();
+			ps.close();
+			rs.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -108,6 +118,9 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 				commodity.setImg(rs.getString("img"));
 				commodities.add(commodity);
 			}
+			con.close();
+			ps.close();
+			rs.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -123,6 +136,9 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 			while (rs.next()) {
 				count = rs.getInt("count");
 			}
+			con.close();
+			ps.close();
+			rs.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -155,6 +171,9 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 					commodity.setImg(rs.getString("img"));
 					commodities.add(commodity);
 				}
+				con.close();
+				ps.close();
+				rs.close();
 			} catch (NumberFormatException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -180,6 +199,9 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 					commodity.setImg(rs.getString("img"));
 					commodities.add(commodity);
 				}
+				con.close();
+				ps.close();
+				rs.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -211,6 +233,9 @@ public class CommodityDaoImpl implements IBaseDao<String, Commodity> {
 				commodity.setCommodity_school(rs.getInt("commodity_school"));
 				commodity.setImg(rs.getString("img"));
 			}
+			con.close();
+			ps.close();
+			rs.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

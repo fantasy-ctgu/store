@@ -68,6 +68,9 @@ public class CommodityTypeDaoImpl implements IBaseDao<String, CommodityType> {
 				commodity.setExplains(rs.getString("explains"));
 				commodityTypes.add(commodity);
 			}
+			con.close();
+			ps.close();
+			rs.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

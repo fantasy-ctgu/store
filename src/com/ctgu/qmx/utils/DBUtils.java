@@ -43,11 +43,11 @@ public class DBUtils {
 	}
 
 	public static Connection getCon() throws SQLException{
-		if(t1.get() == null){
-			con = createCon();
-			t1.set(con);
-		}
-		return t1.get();
+//		if(t1.get() == null){
+//			con = createCon();
+//			t1.set(con);
+//		}
+		return createCon();
 	}
 	
 	public static void closeCon() throws SQLException {

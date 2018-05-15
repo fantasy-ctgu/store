@@ -60,6 +60,9 @@ public class CommoditySchoolDaoImpl implements IBaseDao<String, CommoditySchool>
 				commoditySchool.setCommodity_school(rs.getInt("commodity_school"));
 				commoditySchool.setExplains(rs.getString("explains"));
 			}
+			con.close();
+			ps.close();
+			rs.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -79,6 +82,9 @@ public class CommoditySchoolDaoImpl implements IBaseDao<String, CommoditySchool>
 				commoditySchool.setExplains(rs.getString("explains"));
 				commoditySchools.add(commoditySchool);
 			}
+			con.close();
+			ps.close();
+			rs.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

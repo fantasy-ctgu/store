@@ -32,7 +32,7 @@
 					            </div>
 					            <div class="modal-body">
 					            	<p class="topLeftTwo">Q Q:497324235</p>
-					            	<p class="topLeftTwo">微信:wb197324238</p>
+					            	<p class="topLeftTwo">微信:wb497324238</p>
 					            	<p class="topLeftTwo">电话:17671326450</p>
 					            </div>
 					            <div class="modal-footer">

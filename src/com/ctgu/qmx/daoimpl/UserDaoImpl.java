@@ -10,11 +10,12 @@ import com.ctgu.qmx.bean.User;
 import com.ctgu.qmx.dao.IBaseDao;
 import com.ctgu.qmx.utils.DBUtils;
 
-public class UserDaoImpl implements IBaseDao<String, User>{
+public class UserDaoImpl implements IBaseDao<String, User> {
 
 	private Connection con;
 	private PreparedStatement ps;
 	ResultSet rs;
+
 	public UserDaoImpl() {
 		try {
 			this.con = DBUtils.getCon();
@@ -23,6 +24,7 @@ public class UserDaoImpl implements IBaseDao<String, User>{
 			e.printStackTrace();
 		}
 	}
+
 	@Override
 	public boolean doInsert(User v) {
 		String sql = "insert into user_info(username,password,name,sex,age,address) values(?,?,?,?,?,?)";
@@ -34,11 +36,19 @@ public class UserDaoImpl implements IBaseDao<String, User>{
 			ps.setString(4, v.getSex());
 			ps.setInt(5, v.getAge());
 			ps.setString(6, v.getAddress());
-			if(ps.executeUpdate() > 0){
+			if (ps.executeUpdate() > 0) {
 				return true;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+				ps.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return false;
 	}
@@ -60,11 +70,21 @@ public class UserDaoImpl implements IBaseDao<String, User>{
 			ps.setInt(4, v.getAge());
 			ps.setString(5, v.getAddress());
 			ps.setString(6, v.getUsername());
-			if(ps.executeUpdate() > 0){
+			if (ps.executeUpdate() > 0) {
 				return true;
 			}
+
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+				ps.close();
+				rs.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return false;
 	}
@@ -77,7 +97,7 @@ public class UserDaoImpl implements IBaseDao<String, User>{
 			ps = con.prepareStatement(sql);
 			ps.setString(1, k);
 			rs = ps.executeQuery();
-			while(rs.next()){
+			while (rs.next()) {
 				user = new User();
 				user.setId(rs.getInt("id"));
 				user.setUsername(rs.getString("username"));
@@ -87,6 +107,9 @@ public class UserDaoImpl implements IBaseDao<String, User>{
 				user.setAge(rs.getInt("age"));
 				user.setAddress(rs.getString("address"));
 			}
+			con.close();
+			ps.close();
+			rs.close();
 			return user;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -100,17 +123,18 @@ public class UserDaoImpl implements IBaseDao<String, User>{
 		return null;
 	}
 
-
 	@Override
 	public int getAllContent() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 	@Override
 	public List<User> findAllPaging(String keyWord, int currentPage, int pageSize) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	@Override
 	public User findById(int id) {
 		// TODO Auto-generated method stub

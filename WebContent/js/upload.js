@@ -60,3 +60,7 @@ function uploadSubmit(){
     alert("请正确填写所有信息");
   }
 }
+function checkFile(){
+	$("#file").click();
+	
+}
